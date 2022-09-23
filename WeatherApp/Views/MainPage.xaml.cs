@@ -83,7 +83,7 @@ namespace WeatherApp.Views
                     {
                         var date = DateTime.Parse(list.dt_txt);
 
-                        // date.hour == 21 because the forect updates for every 3 hours, so we want to check the last hour check
+                        // date.hour == 21 b'se the forecast updates every 3 hours, so we want to check the last hour check
                         if (date > DateTime.Now && date.Hour == 21 && date.Minute == 0 && date.Second == 0)
                             allList.Add(list);
                     }
@@ -112,7 +112,7 @@ namespace WeatherApp.Views
             }
             else
             {
-                await DisplayAlert("Weather Info", "No forecast information found", "OK");
+                await DisplayAlert("Weather Info", "No forecast information found!", "OK");
             }
         }
 
