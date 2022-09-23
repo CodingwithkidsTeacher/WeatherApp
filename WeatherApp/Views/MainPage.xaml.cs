@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -51,8 +47,8 @@ namespace WeatherApp.Views
                     windTxt.Text = $"{weatherInfo.wind.speed} m/s";
                     cloudinessTxt.Text = $"{weatherInfo.clouds.all}%";
 
-                    var dt = new DateTime().ToUniversalTime().AddSeconds(weatherInfo.dt);
-                    dateTxt.Text = dt.ToString("dddd, MMM dd").ToUpper();
+                    var todayDate = DateTime.Now;
+                    dateTxt.Text = todayDate.ToString("dddd, MMM dd").ToUpper();
 
                     GetForecast();
                 }
@@ -85,10 +81,10 @@ namespace WeatherApp.Views
 
                     foreach (var list in forcastInfo.list)
                     {
-                        //var date = DateTime.ParseExact(list.dt_txt, "yyyy-MM-dd hh:mm:ss", CultureInfo.InvariantCulture);
                         var date = DateTime.Parse(list.dt_txt);
 
-                        if (date > DateTime.Now && date.Hour == 0 && date.Minute == 0 && date.Second == 0)
+                        // date.hour == 21 because the forect updates for every 3 hours, so we want to check the last hour check
+                        if (date > DateTime.Now && date.Hour == 21 && date.Minute == 0 && date.Second == 0)
                             allList.Add(list);
                     }
 

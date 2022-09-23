@@ -49,8 +49,6 @@ namespace WeatherApp.Models
         public float temp_kf { get; set; }
     }
 
-
-
     public class Rain
     {
         public float _3h { get; set; }
