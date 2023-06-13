@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JPWeatherApp.Views.MainPage">
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0" BackgroundColor="#F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <BoxView Grid.RowSpan="2" BackgroundColor="#7585ba" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0" >
+                <StackLayout Margin="150,20,150,50">
+                    <Entry x:Name="entry" Text="Denver" HorizontalTextAlignment="Center" BackgroundColor="White"/>
+                    <Button Clicked="city_button" Text="Go" FontAttributes="Bold" FontSize="20"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" >
+                <StackLayout>
+                    <Label x:Name="cityTxt" Text="Seattle" TextColor="White" HorizontalTextAlignment="Center" FontSize="30"/>
+                    <Label x:Name="mainDayDate" Text="Monday, May 15" TextColor="White" HorizontalTextAlignment="Center" FontSize="20"/>
+                </StackLayout>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal">
+                    <Label x:Name="mainTemp" Text="60" TextColor="White" FontSize="150" HorizontalOptions="Center"/>
+                    <Label Text="°" TextColor="white" FontSize="100" HorizontalOptions="Center"/>
+                 </StackLayout>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" HeightRequest="200" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"  />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" >
+                <BoxView Grid.RowSpan="2"  BackgroundColor="white" Opacity="0.5" VerticalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,15,0,0" >
+                    <Label x:Name="dayTxtDay1" Text="Tue," TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <Label x:Name="dateDay1" Text="May 2" TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal">
+                        <Label x:Name="tempDay1" Text="60" TextColor="White" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="white" FontSize="40" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Grid  Grid.Column="1">
+                <BoxView Grid.RowSpan="2" BackgroundColor="white" Opacity="0.3"  VerticalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,15,0,0">
+                    <Label x:Name="dayTxtDay2" Text="Tue," TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <Label x:Name="dateDay2" Text="May 2" TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal">
+                        <Label x:Name="tempDay2" Text="60" TextColor="White" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="white" FontSize="40" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Column="2" VerticalOptions="CenterAndExpand">
+                <BoxView Grid.RowSpan="2" BackgroundColor="white" Opacity="0.1" VerticalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,15,0,0">
+                    <Label x:Name="dayTxtDay3" Text="Tue," TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <Label x:Name="dateDay3" Text="May 2" TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal">
+                        <Label x:Name="tempDay3" Text="60" TextColor="White" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="white" FontSize="40" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <StackLayout Margin="0,15,0,0">
+                    <Label x:Name="dayTxtDay4" Text="Tue," TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <Label x:Name="dateDay4" Text="May 2" TextColor="White" FontSize="15" HorizontalOptions="Center"/>
+                    <StackLayout HorizontalOptions="Center" Spacing="0" Orientation="Horizontal">
+                        <Label x:Name="tempDay4" Text="60" TextColor="White" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="white" FontSize="40" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+              
+            </Grid>
+
+        </Grid>
+        
+    </Grid>
+    
+</ContentPage>
